@@ -13,7 +13,6 @@ module.exports = function (router) {
     });
 
     router.get('/setLocale/:locale', function (req, res) {
-        console.info('in here');
         res.cookie('locale', req.params.locale);
         res.redirect('/');
     });
