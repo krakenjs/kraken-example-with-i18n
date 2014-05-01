@@ -39,7 +39,7 @@
 
         "router": {
             "module": {
-                "arguments": [{ "directory": "path:./controllers" }]
+                "arguments": [{ "index": "path:./routes" }]
             }
         },
 
