@@ -4,16 +4,15 @@
 var IndexModel = require('../models/index');
 
 
-module.exports = function (app) {
+module.exports = function (router) {
 
     var model = new IndexModel();
 
-    app.get('/', function (req, res) {
-        console.info('***********res.locals', res.locals);
+    router.get('/', function (req, res) {
         res.render('index', model);
     });
 
-    app.get('/setLocale/:locale', function (req, res) {
+    router.get('/setLocale/:locale', function (req, res) {
         console.info('in here');
         res.cookie('locale', req.params.locale);
         res.redirect('/');
