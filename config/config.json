@@ -15,7 +15,6 @@
                     {
                         "views": "config:express.views",
                         "view engine": "config:express.view engine",
-                        "specialization": "config:specialization",
                         "i18n": "config:i18n"
                     }
                 ]
