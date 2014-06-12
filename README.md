@@ -147,7 +147,7 @@ message=El tiempo es precioso...
 greeting=Hallo, {name}!
 message=Zeit ist kostbar...
 ```
-You may have already noticed that the reason we add the `.properies` files to `locales/` folder is because we set that as the `contentPath` in the i18n config above.
+You may have already noticed that we add the `.properies` files to `locales/` folder because we set the `contentPath` in the i18n config above as `locales/`.
 
 ### Checking the default locale translation in your app
 
