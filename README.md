@@ -18,16 +18,16 @@ The sample app demonstrates how to enable i18n in your app. It has simple suppor
 * de-DE
 
 
-## How to setup the app with i18n from scratch by using generator-kraken ?
+# How to setup the app with i18n from scratch by using generator-kraken ?
 
-# Create a simple scaffolded app using generator-kraken
+### Create a simple scaffolded app using generator-kraken
 
 ```
 $npm install -g generator-kraken
 
 ```
 
-# Setting up the right configs for i18n in the app
+### Setting up the right configs for i18n in the app
 
 * Check the config/config.json file. You must see the following config for i18n.
 
@@ -84,11 +84,11 @@ Similarly in your development.json, make sure you have a config like the followi
 }
 ```
 
-# Localizing your templates
+### Localizing your templates
 
 Lets demo adding a greeting and message localization in your index.dust
 
-* Adding `<pre>` tags to your `index.dust` to specify what to translate in your view.
+* Adding `@pre` tags to your `index.dust` to specify what to translate in your view.
 
 ```
 {<body}
@@ -100,31 +100,35 @@ Lets demo adding a greeting and message localization in your index.dust
 * Adding localization aka `.properties` files
 
 In kraken 1.0 projects, the localized files have the extension `.properties` and translations are expressed as simple key value pairs, eg.`foo=bar`.
-To demonstrate `greeting` and `message` translation for your index.dust for three different locales: `en-US`, 'es-ES` and `de-DE`:
- * create `locales/US/en/index.properties` and add:
- ```
+To demonstrate greeting and message translation for your index.dust for three different locales: `en-US`, `es-ES` and `de-DE`:
+
+* create `locales/US/en/index.properties` and add:
+
+```
 greeting=Hello, {name}!
 message=Time is precious...
 ```
+
 * create `locales/Es/es/index.properties` and add:
 
 ```
 greeting=Hola, {name}!
 message=El tiempo es precioso...
 ```
+
 * create `locales/DE/de/index.properties` and add:
 
 ```
 greeting=Hallo, {name}!
 message=Zeit ist kostbar...
 ```
-You may have already noticed that the reason we add the `.properies` files to `locales/` folder is because we set that as the `contentPath` in the `i18n` config above.
+You may have already noticed that the reason we add the `.properies` files to `locales/` folder is because we set that as the `contentPath` in the i18n config above.
 
-# Checking the default locale translation in your app
+### Checking the default locale translation in your app
 
-Now when you start the app by doing `$node .` and point your browser to `localhost:8000` you will see `index.dust` rendered in the fallback locale `en-US` per our `i18n` config.
+Now when you start the app by doing `$ node .` and point your browser to `localhost:8000` you will see `index.dust` rendered in the fallback locale `en-US` per our `i18n` config.
 
-# Adding a hook to set the locale on the fly
+### Adding a hook to set the locale on the fly
 
 * In your `routes.js` add the following route and controller code
 
@@ -147,7 +151,7 @@ router.get('/setLocale/:locale', function (req, res) {
 }
 ```
 
-The reason above middleware has a priority of `95` is it needs to happen after the cookie parse middleware has executed ([which inside kraken has a priority of `90`](https://github.com/krakenjs/kraken-js/blob/master/config/config.json#L90).
+The reason above middleware has a priority of `95` is it needs to happen after the cookie parse middleware has executed ([which inside kraken-js has a priority of `90`](https://github.com/krakenjs/kraken-js/blob/master/config/config.json#L90).)
 
 * Set up the middleware in the path specified in the above config to read locale from cookie, and setting it in the res.locals. So add the file `lib/locale.js` and the following snippet into the file:
 
@@ -168,7 +172,7 @@ module.exports = function () {
 That is it!!! You are done!
 
 
-# To see it working with different locales:
+### See it working with different locales:
 
 1. Start the app:
 ```
