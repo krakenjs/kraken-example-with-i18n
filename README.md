@@ -22,8 +22,33 @@ The sample app demonstrates how to enable i18n in your app. It has simple suppor
 
 ### Create a simple scaffolded app using generator-kraken
 
+* Install Generator
 ```
-$npm install -g generator-kraken
+$ npm install -g generator-kraken
+
+```
+
+* Create an app using the generator
+
+```
+$ yo kraken
+
+     ,'""`.
+hh  / _  _ \
+    |(@)(@)|   Release the Kraken!
+    )  __  (
+   /,'))((`.\
+  (( ((  )) ))
+   `\ `)(' /'
+
+Tell me a bit about your application:
+
+[?] Name: foo
+[?] Description: bar
+[?] Author: foobar
+[?] Template library? Dust
+[?] CSS preprocessor library? LESS
+[?] JavaScript library? None
 
 ```
 
