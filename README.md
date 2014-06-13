@@ -199,12 +199,12 @@ That is it!!! You are done!
 
 ### See it working with different locales:
 
-1. Start the app:
+* Start the app:
 ```
 $ node .
 ```
 
-2. In your browser:
+* In your browser:
 ```
 localhost:8000/setLocale/en-US
 (or)
@@ -214,9 +214,9 @@ localhost:8000/setLocale/de-DE
 ```
 This will automatically set the locale and redirect to the index page in the right locale.
 
-3. Now if you would like to see it work in `production` mode with compiled templates:
+* Now if you would like to see it work in `production` mode with compiled templates:
 
-* `$ grunt build`
-* `NODE_ENV=production node .`
+1. `$ grunt build`
+2. `$ NODE_ENV=production node .`
 
 And repeat steps 1 and 2.
