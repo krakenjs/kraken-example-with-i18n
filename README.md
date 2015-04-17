@@ -195,17 +195,28 @@ module.exports = function () {
 
 That is it!!! You are done!
 
+## Installation of this demo
+
+Clone, install and run.
+
+```shell
+git clone git@github.com:krakenjs/kraken-example-with-i18n.git
+cd kraken-examples-with-i18n
+npm install
+npm start
+```
 
 ### See it working with different locales:
 
-1. Start the app: ` $ node . `
-2. In your browser, visit [`http://localhost:8000/setLocale/en-US`](http://localhost:8000/setLocale/en-US) or [`http://localhost:8000/setLocale/es-ES`](http://localhost:8000/setLocale/es-ES) or [`http://localhost:8000/setLocale/de-DE`](http://localhost:8000/setLocale/de-DE)
+In your browser, visit [`http://localhost:8000/setLocale/en-US`](http://localhost:8000/setLocale/en-US) or [`http://localhost:8000/setLocale/es-ES`](http://localhost:8000/setLocale/es-ES) or [`http://localhost:8000/setLocale/de-DE`](http://localhost:8000/setLocale/de-DE)
 
 This will automatically set the locale and redirect to the index page in the right locale.
 
 Now if you would like to see it work in `production` mode with compiled templates:
 
-* `$ grunt build`
-* `$ NODE_ENV=production node .`
+```shell
+grunt build
+NODE_ENV=production node .
+```
 
 And repeat 1 and 2.
