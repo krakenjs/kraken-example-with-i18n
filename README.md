@@ -133,7 +133,7 @@ greeting=Hello, {name}!
 message=Time is precious...
 ```
 
-* create `locales/Es/es/index.properties` and add:
+* create `locales/ES/es/index.properties` and add:
 
 ```
 greeting=Hola, {name}!
