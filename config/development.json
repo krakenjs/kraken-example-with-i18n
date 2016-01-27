@@ -1,22 +1,21 @@
 {
-
     "express": {
         "view cache": false,
         "view engine": "dust",
         "views": "path:./public/templates"
     },
 
+
     "view engines": {
         "dust": {
-            "module": "engine-munger",
+            "module": "makara",
             "renderer": {
                 "method": "dust",
                 "arguments": [
-                    { "cache": false },
                     {
-                        "views": "config:express.views",
-                        "view engine": "config:express.view engine",
-                        "i18n": "config:i18n"
+                        "cache": false,
+                        "helpers": "config:dust.helpers",
+                        "whitespace": true
                     }
                 ]
             }
@@ -28,23 +27,26 @@
             "enabled": true,
             "priority": 35,
             "module": {
-                "name": "kraken-devtools",
+                "name": "construx",
                 "arguments": [
                     "path:./public",
                     "path:./.build",
                     {
-                        "dust": {
-                            "module": "kraken-devtools/plugins/dustjs",
+
+                        "template": {
+                            "module": "construx-dustjs",
                             "files": "/templates/**/*.js",
-                            "base": "templates",
-                            "i18n": "config:i18n"
+                            "base": "templates"
                         },
-                        "less": {
-                            "module": "kraken-devtools/plugins/less",
+
+
+                        "css": {
+                            "module": "construx-less",
                             "files": "/css/**/*.css"
                         },
+
                         "copier": {
-                            "module": "kraken-devtools/plugins/copier",
+                            "module": "construx-copier",
                             "files": "**/*"
                         }
                     }
