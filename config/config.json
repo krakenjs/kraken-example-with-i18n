@@ -1,27 +1,28 @@
 {
     "express": {
         "view cache": false,
-        "view engine": "js",
-        "views": "path:./.build/templates"
+        "view engine": "dust",
+        "views": "path:./public/templates"
     },
-
     "view engines": {
-        "js": {
-            "module": "engine-munger",
+        "dust": {
+            "module": "makara",
             "renderer": {
-                "method": "js",
+                "method": "dust",
                 "arguments": [
-                    { "cache": true },
-                    {
-                        "views": "config:express.views",
-                        "view engine": "config:express.view engine",
-                        "i18n": "config:i18n"
-                    }
+                    { "cache": true, "helpers": "config:dust.helpers" }
                 ]
             }
         }
     },
-
+    "dust": {
+        "helpers": [
+            {
+                "name": "dust-makara-helpers",
+                "arguments": { "autoloadTemplateContent": false }
+            }
+        ]
+    },
     "i18n": {
         "contentPath": "path:./locales",
         "fallback": "en-US"
@@ -42,11 +43,16 @@
             }
         },
 
-        "expressView": {
+        "makara": {
             "priority": 100,
             "enabled": true,
             "module": {
-                "name": "engine-munger/lib/expressView"
+                "name": "makara",
+                "arguments": [
+                    {
+                        "i18n": "config:i18n"
+                    }
+                ]
             }
         },
 
